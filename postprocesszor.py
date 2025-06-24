@@ -64,7 +64,7 @@ class ImageProcessorApp:
 
         tk.Label(main_frame, text="Vignettálás sugara (radius, 0.0-1.0):", bg="#ECEFF1", fg="#263238", font=("Helvetica", 13)).pack(pady=(5, 2))
         self.radius_entry = ttk.Entry(main_frame, width=10)
-        self.radius_entry.insert(0, "0.995")
+        self.radius_entry.insert(0, "0.998")
         self.radius_entry.pack(fill="x", pady=2)
 
         tk.Label(main_frame, text="Fényképezőgép márkája:", bg="#ECEFF1", fg="#263238", font=("Helvetica", 13)).pack(pady=(5, 2))
@@ -138,7 +138,7 @@ class ImageProcessorApp:
         noisy = np.clip(arr.astype(np.int16) + grain, 0, 255).astype(np.uint8)
         return Image.fromarray(noisy)
 
-    def add_vignette(self, img: Image.Image, radius=0.995, softness=0.995):
+    def add_vignette(self, img: Image.Image, radius=0.998, softness=0.998):
         w, h = img.size
         x = np.linspace(-1, 1, w)
         y = np.linspace(-1, 1, h)
@@ -173,7 +173,7 @@ class ImageProcessorApp:
                 "Make": camera_make,
                 "Model": camera_model
             })
-            img.save(output_path, "PNG", quality=95, exif=img.info.get("exif"))
+            img.save(output_path, "PNG", quality=100, exif=img.info.get("exif"))
             return f"Feldolgozva: {os.path.basename(input_path)}\n"
         except Exception as e:
             return f"Hiba {os.path.basename(input_path)} feldolgozása közben: {str(e)}\n"
