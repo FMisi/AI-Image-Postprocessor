@@ -9,7 +9,7 @@ import threading
 class ImageProcessorApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("AI Kép Feldolgozó")
+        self.root.title("AI Képfeldolgozó")
         self.root.geometry("700x900")
         self.root.configure(bg="#ECEFF1")
 
@@ -36,7 +36,7 @@ class ImageProcessorApp:
         main_frame.pack(expand=True, fill="both", padx=10, pady=10)
 
         # Cím
-        tk.Label(main_frame, text="AI Kép Feldolgozó", font=("Helvetica", 18, "bold"),
+        tk.Label(main_frame, text="AI Képfeldolgozó", font=("Helvetica", 18, "bold"),
                 bg="#ECEFF1", fg="#263238").pack(pady=(0, 20))
 
         # Input mappa választás
