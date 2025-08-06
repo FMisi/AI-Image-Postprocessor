@@ -55,7 +55,7 @@ class ImageProcessorApp:
         self.alphap_entry.pack(fill="x", pady=2)
         tk.Label(main_frame, text="Film szemcse intenzitása:", bg="#ECEFF1", fg="#263238", font=("Helvetica", 11)).pack(pady=(5, 2))
         self.intensity_entry = ttk.Entry(main_frame, width=10)
-        self.intensity_entry.insert(0, "0.04")  
+        self.intensity_entry.insert(0, "0.036")  
         self.intensity_entry.pack(fill="x", pady=2)
         tk.Label(main_frame, text="Vignettálás sugara (radius):", bg="#ECEFF1", fg="#263238", font=("Helvetica", 11)).pack(pady=(5, 2))
         self.radius_entry = ttk.Entry(main_frame, width=10)
